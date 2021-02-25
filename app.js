@@ -6,7 +6,7 @@ app.get('/', (req, res) => {
 
 });
 app.get('/healthCheck', (req, res) => {
-    res.send(res);
+    res.send("Check");
 
 });
 
@@ -15,7 +15,11 @@ app.listen(port, () => {
     console.log("Olha eu aquiiii nessa bagaça");
 });
 
-app.listen(80, () => {
-    console.log("ta ok essa porta");
-});
+var http = require('http');
 
+http.createServer(onRequest_a).listen(80);
+
+function onRequest_a (req, res) {
+    res.write('healthCheck');
+    res.end();
+  }

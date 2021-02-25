@@ -11,7 +11,7 @@ app.use(
 )
 
 app.get('/', (req, res) => {
-    return response.json([message: "Olha a api rolando"]);
+    return response.json({message: 'Olha a api rolando'});
 
 });
 

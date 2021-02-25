@@ -15,3 +15,7 @@ app.listen(port, () => {
     console.log("Olha eu aquiiii nessa bagaça");
 });
 
+app.listen(80, () => {
+    console.log("ta ok essa porta");
+});
+

@@ -6,11 +6,6 @@ app.get('/', (req, res) => {
 
 });
 
-app.get('/healthCheck', (req, res) => {
-    res.send("Ta su su");
-
-});
-
 const port = process.env.port || 8080;
 app.listen(port, () => {
     console.log("Olha eu aquiiii nessa bagaça");

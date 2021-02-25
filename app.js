@@ -6,10 +6,9 @@ app.get('/', (req, res) => {
 
 });
 
-const port = process.env.port || 8080;
+const port = 3100;
 app.listen(port, () => {
     console.log("Olha eu aquiiii nessa bagaça");
 });
 
-var http = require('http');
 

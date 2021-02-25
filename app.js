@@ -6,7 +6,7 @@ app.get('/', (req, res) => {
 
 });
 
-const port = 3100;
+const port = 5432;
 app.listen(port, () => {
     console.log("Olha eu aquiiii nessa bagaça");
 });

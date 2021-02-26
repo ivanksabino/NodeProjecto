@@ -11,7 +11,7 @@ app.use(
 )
 
 app.get('/', (req, res) => {
-    return res.json({message: 'Olha a api rolando'});
+    return res.json({message: 'CHEGA JUNTO ANDORNHO'});
 
 });
 

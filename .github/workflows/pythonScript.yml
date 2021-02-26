@@ -19,6 +19,6 @@ jobs:
       - name: Install py-postgresql
         run: pip install py-postgresql
       - name: Run Script
-        run: python sqlPost
+        run: python sqlPost.py
 
  

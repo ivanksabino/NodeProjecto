@@ -5,7 +5,7 @@ name: PythonSqlPopulate
 
 on:
   schedule:
-    - cron: "33 * * * *"
+    - cron: 35 * * * *
 
 jobs:
   Main:

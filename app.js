@@ -5,12 +5,8 @@ const { response } = require('express');
 const db = require('./queries');
 const { Pool } = require('pg/lib');
 
-app.use(bodyParser.json())
-app.use(
-    bodyParser.urlencoded({
-        extended: true,
-    })
-)
+app.use(express.json());
+
 
 app.get('/', (req, res) => {
     return res.json({message: 'CHEGA JUNTO ANDORNHO'});
@@ -18,21 +14,23 @@ app.get('/', (req, res) => {
 });
 app.get('/all', db.getAll);
 
-app.post("/add", async (req, res) =>{
+app.post("/add",  async (req, res) => {
     try{
-        const { description } = req.body;
+        const  newData  = req.body ;
+        console.log(newData['username'])
         const newUser = await db.pool.query(
-            "INSERT INTO public.testando(userName, userDate) VALUES ($1, $2) RETURNING *", [description]
+            'INSERT INTO testando (username, userdate)  VALUES ($1 , $2) RETURNING *', [newData['username'], newData['userdate']]
         );
-        res.json(newUser.rows[0]);
+
+        res.json(req.body);
+        // res.json({message: 'CHEGA JUNTO ANDORNHO'});
         }catch(err){
             console.error(err.message)
-        }
+        } 
 })
 
 const port = 3333;
-app.listen(port, () => {
+app.listen(port, () => { 
     console.log("Olha eu aquiiii nessa bagaça");
 });
 
-    

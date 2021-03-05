@@ -24,6 +24,7 @@ app.post("/add", async (req, res) =>{
         const newUser = await db.pool.query(
             "INSERT INTO public.testando(userName, userDate) VALUES ($1, $1) RETURNING *", [description]
         );
+        res.json(newUser.rows[0]);
         }catch(err){
             console.error(err.message)
         }

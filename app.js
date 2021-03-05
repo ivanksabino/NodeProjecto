@@ -22,7 +22,7 @@ app.post("/add", async (req, res) =>{
     try{
         const { description } = req.body;
         const newUser = await db.pool.query(
-            "INSERT INTO public.testando('userName', 'userDate') VALUES ('ïvanInserido', 'Foi um post');"
+            "INSERT INTO public.testando(userName, userDate) VALUES ($1, $1) RETURNING *", [description]
         );
         }catch(err){
             console.error(err.message)
